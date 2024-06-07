@@ -1,6 +1,8 @@
 <template>
-  <Contador></Contador>
-
+  <img src="./assets/logo.png" alt="">
+  <Contador titulo="Contador"/>
+  <Contador titulo="Counter" />
+  <Contador  />
 </template>
 
 <script>
