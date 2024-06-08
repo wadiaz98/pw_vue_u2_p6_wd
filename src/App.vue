@@ -1,8 +1,8 @@
 <template>
   <img src="./assets/logo.png" alt="">
-  <Contador titulo="Contador"/>
-  <Contador titulo="Counter" />
-  <Contador  />
+  <Contador titulo="Contador" :num="-1"/>
+  <Contador titulo="Counter"/>
+  <Contador :num="calcularValor()"/>
 </template>
 
 <script>
@@ -12,6 +12,11 @@ export default {
   name: 'App',
   components: {
     Contador
+  },
+  methods:{
+    calcularValor(){
+      return 10+2;
+    }
   }
 }
 </script>

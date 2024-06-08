@@ -10,10 +10,24 @@
 
 <script>
 export default {
-  props:['titulo', 'num'],
+  /* Forma básica de declarar un props */
+  /* props:['titulo', 'num'], */
+  props:{
+    titulo:String,
+    num: {
+      type: Number,
+      required: true,
+      default: 2,
+      validator(value){
+        return value >= 0
+      }
+    },
+    
+  },
+
   data() {
     return {
-      numero: 5,
+      numero: this.num,
     }
   },
   methods: {
