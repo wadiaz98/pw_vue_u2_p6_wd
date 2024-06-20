@@ -1,15 +1,15 @@
 <template>
-  <Pregunta/>
+<PokemonPage/>
 </template>
 
 <script>
 
-import Pregunta from '@/components/Pregunta.vue'
+import PokemonPage from '@/pages/PokemonPage.vue'
 export default {
   name: 'App',
   components: {
 
-    Pregunta,
+    PokemonPage,
   },
   methods: {
     calcularValor() {
@@ -28,4 +28,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

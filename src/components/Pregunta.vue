@@ -5,9 +5,9 @@
   <div class="pregunta_container">
     <input v-model="pregunta" type="text" placeholder="Hazme una pregunta " />
     <p>Recuerda terminar las pregunta con (?)</p>
-    <div class="respuesta">
+    <div v-show="mensaje" class="respuesta">
       <h2>{{ pregunta }}</h2>
-      <h1>{{ respuesta }}</h1>
+      <h1>{{ respuesta === 'yes'? "SI":"NO!" }}</h1>
     </div>
   </div>
 </template>
@@ -19,17 +19,21 @@ export default {
       respuesta:null,
       pregunta: null,
       image:null,
+      mensaje:false,
     };
   },
   watch: {
     pregunta(value, oldValue) {
+      this.mensaje = false;
       console.log({ value, oldValue });
       if (!value.includes("?")) {
         this.respuesta = null;
+        
         return; /* Salgase del observador */
       }
       //Consumir el API para obtener la respuesta
       this.getResponse();
+      this.mensaje = true;
     },
   },
   methods: {
@@ -43,7 +47,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 img,
 .oscuro {
   max-width: 100%;
