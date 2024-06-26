@@ -1,22 +1,34 @@
 <template>
-<PokemonPage/>
+  <div>
+    <!-- <Pregunta /> -->
+
+    <PokemonPage />
+  </div>
+  <!-- <Contador v-bind:num="11 + 1" v-if="false" /> -->
 </template>
 
 <script>
-
-import PokemonPage from '@/pages/PokemonPage.vue'
+/* import Contador from "./components/Contador.vue"; */ /* [1] */
+/* import Pregunta from "./components/Pregunta.vue"; */
+import PokemonPage from "./pages/PokemonPage.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-
+    /* [2] */
+    /* Pregunta, */
+    /*Contador, */
     PokemonPage,
   },
   methods: {
     calcularValor() {
       return 10 + 2;
-    }
-  }
-}
+    },
+    async api() {},
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
@@ -28,5 +40,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
 </style>
